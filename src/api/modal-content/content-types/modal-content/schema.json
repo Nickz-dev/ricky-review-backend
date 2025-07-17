@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "modal_contents",
+  "info": {
+    "singularName": "modal-content",
+    "pluralName": "modal-contents",
+    "displayName": "Modal-content"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "showMirrorButton": {
+      "type": "boolean"
+    },
+    "mirrorUrl": {
+      "type": "string"
+    }
+  }
+}

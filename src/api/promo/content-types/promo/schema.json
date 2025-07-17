@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "promos",
+  "info": {
+    "singularName": "promo",
+    "pluralName": "promos",
+    "displayName": "Promo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "buttonText": {
+      "type": "string"
+    },
+    "buttonUrl": {
+      "type": "string"
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "promoSubtitle": {
+      "type": "string"
+    },
+    "promoAmount": {
+      "type": "string"
+    },
+    "promoIcon": {
+      "type": "string"
+    },
+    "casino": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::casino.casino",
+      "mappedBy": "promo"
+    }
+  }
+}

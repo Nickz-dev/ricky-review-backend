@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "casino_page_contents",
+  "info": {
+    "singularName": "casino-page-content",
+    "pluralName": "casino-page-contents",
+    "displayName": "Casino Page Content"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "casino": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::casino.casino",
+      "inversedBy": "casino_page_content"
+    },
+    "anchors": {
+      "type": "component",
+      "component": "shared.anchor-link",
+      "repeatable": true
+    }
+  }
+}

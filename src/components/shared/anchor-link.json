@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_anchor_links",
+  "info": {
+    "displayName": "anchor-link"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "anchorId": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "page_contens",
+  "info": {
+    "singularName": "page-conten",
+    "pluralName": "page-contens",
+    "displayName": "PageContent"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pageType": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "string"
+    },
+    "faq": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::faq.faq"
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "buttonText": {
+      "type": "string"
+    }
+  }
+}

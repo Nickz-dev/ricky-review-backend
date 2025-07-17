@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "Footer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "copyright": {
+      "type": "string"
+    },
+    "links": {
+      "type": "string"
+    },
+    "footer_link": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::footer-link.footer-link"
+    }
+  }
+}

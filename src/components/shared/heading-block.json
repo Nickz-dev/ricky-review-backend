@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_heading_blocks",
+  "info": {
+    "displayName": "heading-block"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

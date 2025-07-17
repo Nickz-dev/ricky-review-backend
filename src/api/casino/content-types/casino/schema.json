@@ -1,0 +1,107 @@
+{
+  "kind": "collectionType",
+  "collectionName": "casinos",
+  "info": {
+    "singularName": "casino",
+    "pluralName": "casinos",
+    "displayName": "Casino"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "country": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "decimal"
+    },
+    "casino_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::casino-category.casino-category"
+    },
+    "promoBanner": {
+      "type": "string"
+    },
+    "promoCode": {
+      "type": "string"
+    },
+    "promoDescription": {
+      "type": "string"
+    },
+    "providers": {
+      "type": "string"
+    },
+    "paymentMethods": {
+      "type": "string"
+    },
+    "devices": {
+      "type": "string"
+    },
+    "bonus": {
+      "type": "string"
+    },
+    "isTop": {
+      "type": "boolean"
+    },
+    "isVerified": {
+      "type": "boolean"
+    },
+    "isLicensed": {
+      "type": "boolean"
+    },
+    "playUrl": {
+      "type": "string"
+    },
+    "promo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::promo.promo",
+      "inversedBy": "casino"
+    },
+    "casino_page_content": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::casino-page-content.casino-page-content",
+      "mappedBy": "casino"
+    },
+    "reviewBlocks": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.text-block",
+        "shared.image-block",
+        "shared.heading-block",
+        "shared.anchor-link"
+      ]
+    },
+    "faq": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::faq.faq",
+      "inversedBy": "casino"
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": true
+    }
+  }
+}
