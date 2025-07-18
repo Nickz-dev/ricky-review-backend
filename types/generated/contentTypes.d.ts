@@ -455,6 +455,7 @@ export interface ApiCasinoCategoryCasinoCategory
     draftAndPublish: true;
   };
   attributes: {
+    casino: Schema.Attribute.Relation<'manyToOne', 'api::casino.casino'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -522,8 +523,8 @@ export interface ApiCasinoCasino extends Struct.CollectionTypeSchema {
   };
   attributes: {
     bonus: Schema.Attribute.String;
-    casino_category: Schema.Attribute.Relation<
-      'oneToOne',
+    casino_categories: Schema.Attribute.Relation<
+      'oneToMany',
       'api::casino-category.casino-category'
     >;
     casino_page_content: Schema.Attribute.Relation<
@@ -535,7 +536,7 @@ export interface ApiCasinoCasino extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     devices: Schema.Attribute.String;
-    faq: Schema.Attribute.Relation<'oneToOne', 'api::faq.faq'>;
+    faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
     isLicensed: Schema.Attribute.Boolean;
     isTop: Schema.Attribute.Boolean;
     isVerified: Schema.Attribute.Boolean;
@@ -587,13 +588,17 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   };
   attributes: {
     answer: Schema.Attribute.Text;
-    casino: Schema.Attribute.Relation<'oneToOne', 'api::casino.casino'>;
+    casino: Schema.Attribute.Relation<'manyToOne', 'api::casino.casino'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'> &
       Schema.Attribute.Private;
+    page_content: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::page-conten.page-conten'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     question: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -819,7 +824,7 @@ export interface ApiPageContenPageConten extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    faq: Schema.Attribute.Relation<'oneToOne', 'api::faq.faq'>;
+    faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

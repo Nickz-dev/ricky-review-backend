@@ -19,9 +19,15 @@
     },
     "casino": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::casino.casino",
-      "mappedBy": "faq"
+      "inversedBy": "faqs"
+    },
+    "page_content": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::page-conten.page-conten",
+      "inversedBy": "faqs"
     }
   }
 }

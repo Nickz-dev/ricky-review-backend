@@ -33,10 +33,11 @@
     "rating": {
       "type": "decimal"
     },
-    "casino_category": {
+    "casino_categories": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::casino-category.casino-category"
+      "relation": "oneToMany",
+      "target": "api::casino-category.casino-category",
+      "mappedBy": "casino"
     },
     "promoBanner": {
       "type": "string"
@@ -92,11 +93,11 @@
         "shared.anchor-link"
       ]
     },
-    "faq": {
+    "faqs": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::faq.faq",
-      "inversedBy": "casino"
+      "mappedBy": "casino"
     },
     "seo": {
       "type": "component",

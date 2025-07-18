@@ -29,6 +29,12 @@
     },
     "description": {
       "type": "string"
+    },
+    "casino": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::casino.casino",
+      "inversedBy": "casino_categories"
     }
   }
 }

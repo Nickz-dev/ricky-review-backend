@@ -23,10 +23,11 @@
     "seoDescription": {
       "type": "string"
     },
-    "faq": {
+    "faqs": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::faq.faq"
+      "relation": "oneToMany",
+      "target": "api::faq.faq",
+      "mappedBy": "page_content"
     },
     "content": {
       "type": "blocks"
